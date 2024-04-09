@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from 'vue';
-import {useRoute} from 'vue-router'
+import {useRoute, RouterLink} from 'vue-router'
 
 //stockage url
 const route = useRoute();
@@ -38,8 +38,9 @@ getOneMonsterById(route.params.id)
                         <h1 class="display-5 text-uppercase mb-0">{{monster.name}}</h1>
                     </div>
                     <h4 class="text-body mb-4">{{monster.description}}</h4>
-                 
+                 <RouterLink to="/monsters"><button class="btn btn-danger">Back to List</button></RouterLink>
                 </div>
+                
             </div>
         </div>
     </div>
