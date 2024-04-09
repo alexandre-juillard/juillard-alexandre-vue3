@@ -9,7 +9,8 @@ const router = useRouter();
 
 //ref pour la pagination
 const currentPage = ref(1);
-const totalPages = ref(5);
+const totalPages = ref(2);
+const limit = ref(40);
 
 //ref pour stocker tableau d'objet de l'API
 const monsters = ref([]);
@@ -17,7 +18,7 @@ const monsters = ref([]);
 //methode pour call API
 const getAllMonsters = async () => {
   const response = await fetch(
-    `https://metallo.ew.r.appspot.com/monsters?page=${currentPage.value}`
+    `https://metallo.ew.r.appspot.com/monsters?page=${currentPage.value}&limit={limit.value}`
   );
   monsters.value = await response.json();
   // console.log(monsters.value);
