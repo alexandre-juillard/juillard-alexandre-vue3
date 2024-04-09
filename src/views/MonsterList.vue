@@ -18,7 +18,7 @@ const monsters = ref([]);
 //methode pour call API
 const getAllMonsters = async () => {
   const response = await fetch(
-    `https://metallo.ew.r.appspot.com/monsters?page=${currentPage.value}&limit={limit.value}`
+    `https://metallo.ew.r.appspot.com/monsters?page=${currentPage.value}&limit=${limit.value}`
   );
   monsters.value = await response.json();
   // console.log(monsters.value);
